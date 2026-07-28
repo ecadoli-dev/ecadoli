@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../welcome/presentation/welcome_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -29,6 +30,15 @@ class _SplashScreenState extends State<SplashScreen>
     );
 
     _controller.forward();
+
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const WelcomeScreen(),
+        ),
+      );
+    });
   }
 
   @override
@@ -48,8 +58,6 @@ class _SplashScreenState extends State<SplashScreen>
               AppColors.primary,
               AppColors.secondary,
             ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
           ),
         ),
 
@@ -60,32 +68,22 @@ class _SplashScreenState extends State<SplashScreen>
             child: Column(
               mainAxisSize: MainAxisSize.min,
 
-              children: [
+              children: const [
 
-                const Icon(
+                Icon(
                   Icons.people_alt_rounded,
                   size: 90,
                   color: Colors.white,
                 ),
 
-                const SizedBox(height: 20),
+                SizedBox(height: 20),
 
-                const Text(
+                Text(
                   'ecadoli',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 42,
                     fontWeight: FontWeight.bold,
-                  ),
-                ),
-
-                const SizedBox(height: 10),
-
-                const Text(
-                  'Connect. Share. Create.',
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 16,
                   ),
                 ),
               ],
