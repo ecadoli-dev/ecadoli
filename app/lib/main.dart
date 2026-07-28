@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'core/theme/app_theme.dart';
 
 void main() {
   runApp(const EcadoliApp());
@@ -11,10 +12,14 @@ class EcadoliApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+
       title: 'ecadoli',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+
+      themeMode: ThemeMode.system,
+
       home: const HomePage(),
     );
   }
@@ -29,6 +34,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('ecadoli'),
       ),
+
       body: const Center(
         child: Text(
           'Welcome to ecadoli',
