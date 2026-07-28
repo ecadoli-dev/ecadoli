@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'core/theme/app_theme.dart';
+import 'features/splash/presentation/splash_screen.dart';
 
 void main() {
   runApp(const EcadoliApp());
@@ -20,29 +21,7 @@ class EcadoliApp extends StatelessWidget {
 
       themeMode: ThemeMode.system,
 
-      home: const HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('ecadoli'),
-      ),
-
-      body: const Center(
-        child: Text(
-          'Welcome to ecadoli',
-          style: TextStyle(
-            fontSize: 24,
-          ),
-        ),
-      ),
+      home: const SplashScreen(),
     );
   }
 }
